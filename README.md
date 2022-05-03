@@ -1,4 +1,3 @@
 <h2>Description</h2>
-<hr>
-<p>test</P>
+<p>A test-project/coding task for check24</P>
 
