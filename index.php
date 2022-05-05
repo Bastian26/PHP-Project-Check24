@@ -20,7 +20,14 @@
 
         <?
 
-
+            foreach ($blogPosts as $post)
+            {
+                echo "<div class='post'>";
+                echo "<h1>" . $post->title . "</h1>";
+                echo "<p>" . $post->post . "</h1>";
+                echo "<span class='footer'>Posted By: " . $post->author . " Posted On: " . $post->datePosted . " Tags: " . $post->tags . "</span>";
+                echo "</div>";
+            }
         ?>
 
     </main>
