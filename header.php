@@ -13,7 +13,6 @@
             }
             else {
                 echo "<li><a href='./includes/login.inc.php'>Login</a></li>";
-                echo "<li><a href='#'>Eintrag hinzufügen</a></li>";
             }
             ?>
 

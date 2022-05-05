@@ -12,14 +12,6 @@ class Login extends Dbh {
         return self::$loginClicked;
     }
 
-    /**
-     * @param bool $loginClicked
-     */
-    public static function setLoginClicked($loginClicked)
-    {
-        self::$loginClicked = $loginClicked;
-    }
-
 
 
     protected function getUser($uid, $pwd) {
@@ -38,8 +30,16 @@ class Login extends Dbh {
             exit();
         }
 
-        $pwdHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $checkPwd = password_verify($pwd, $pwdHashed[0]["users_pwd"]);
+        $pwdDB = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $checkPwd = true;
+
+
+        if ($pwd === $pwdDB) {
+            $checkPwd = true;
+        }
+        else {
+            $checkPwd = false;
+        }
 
         if($checkPwd == false)
         {
