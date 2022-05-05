@@ -19,7 +19,7 @@
     <main>
 
         <?
-
+            $blogPosts = new BlogPost();
             foreach ($blogPosts as $post)
             {
                 echo "<div class='post'>";
