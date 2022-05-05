@@ -5,7 +5,9 @@ include "../classes/dbh.classes.php";
 include "../classes/login.classes.php";
 include "../classes/login-contr.classes.php";
 
-if (loginClicked === true) {
+
+
+if ( === true) {
     ?>
     <div class="index-login-login">
             <h4>LOGIN</h4>

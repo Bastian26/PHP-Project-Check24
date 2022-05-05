@@ -2,7 +2,25 @@
 
 class Login extends Dbh {
 
-    static $loginClicked = false;
+    public static $loginClicked = false;
+
+    /**
+     * @return bool
+     */
+    public static function isLoginClicked()
+    {
+        return self::$loginClicked;
+    }
+
+    /**
+     * @param bool $loginClicked
+     */
+    public static function setLoginClicked($loginClicked)
+    {
+        self::$loginClicked = $loginClicked;
+    }
+
+
 
     protected function getUser($uid, $pwd) {
         $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_uid = ? OR users_email = ?;');
